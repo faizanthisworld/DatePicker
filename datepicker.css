@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Poppins, sans-serif;
+}
+.hide {
+  display: none;
+}
+.datepicker  {
+  margin: 1rem;
+  
+}
+#calander {
+  box-shadow: 0 1px 1px 1px grey;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+#date-input {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+}
+.datepicker-template .input {
+  position: relative;
+}
+.datepicker-template .input::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  rotate: -50deg;
+  right: 10px;
+  top: 25%;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+#close-btn {
+  margin-left: calc(100% - 20px);
+}
+span.day {
+  text-align: center;
+}
+#calander .calander-body .container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+#calander .calander-header .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+#calander .calander-body .container span.date {
+  position: relative;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+form {
+  max-width: 500px;
+  margin: auto;
+}
+h1 {
+  text-align: center;
+}
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  margin: 1rem 0;
+  color: white;
+  background-color:rgb(114, 172, 0);
+
+}
+.datepicker-temp {
+  margin: 1rem 0;
+}
+span.day {
+  cursor: text;
+}
+#calander .calander-body .container span.date.selected {
+  background-color: red;
+}
+#calander .calander-header .container > span {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+.current-month {
+  text-transform: capitalize;
+}
+#years,
+#months {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+.current-month,
+.current-year {
+  color: rgb(28, 185, 84);
+}
+span.date:hover,
+.current-year:hover,
+#years span:hover,
+.current-month:hover,
+#months span:hover,
+.pre-month:hover,
+.next-month:hover {
+  color: white;
+}
+
+.current-year,
+.current-month,
+#months span,
+.pre-month,
+.next-month,
+#years span {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+span.date::before,
+.current-year::before,
+#years span::before,
+.current-month::before,
+#months span::before,
+.pre-month::before,
+.next-month::before {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 0.2rem;
+  background-color: rgb(28, 185, 84);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  opacity: 0;
+}
+
+span.date:hover::before,
+.current-year:hover::before,
+#years span:hover::before,
+.current-month:hover::before,
+#months span:hover::before,
+.pre-month:hover::before,
+.next-month:hover::before {
+  animation: zoomIn 0.2s ease-in-out;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

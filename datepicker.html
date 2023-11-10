@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="datepicker.js" defer></script>
+    <script src="datepicker-validation.js" defer></script>
+    <link rel="stylesheet" href="datepicker.css" />
+    <title>Datepicker - Faizan Ahmed</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <template data-datePickerTemplate>
+      <div class="datepicker-template">
+        <div class="input">
+          <input
+            type="text"
+            placeholder="Select date"
+            readonly
+            id="date-input"
+          />
+          <input type="text" hidden id="backend-date" />
+        </div>
+
+        <div id="calander" class="hide">
+          <div class="calander-header">
+            <div class="container">
+              <span class="pre-month"> ← </span>
+              <span class="current-month"></span>
+              <span class="current-year"></span>
+              <span class="next-month">→</span>
+            </div>
+
+            <span id="close-btn" class="hide">✖</span>
+          </div>
+          <div class="calander-body">
+            <div class="container"></div>
+            <hr />
+            <div id="years"></div>
+            <div id="months">
+              <span>jan</span>
+              <span>feb</span>
+              <span>mar</span>
+              <span>apr</span>
+              <span>may</span>
+              <span>june</span>
+              <span>july</span>
+              <span>aug</span>
+              <span>sept</span>
+              <span>oct</span>
+              <span>nov</span>
+              <span>dec</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    
+    <h1>Custom Date Picker - (with Validation)</h1>
+    <form>
+      <div class="datepicker-temp"></div>
+      <div class="datepicker-temp"></div>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
